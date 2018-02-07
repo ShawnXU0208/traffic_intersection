@@ -1,0 +1,52 @@
+<Intersection>
+Simple Example	Intersection with just one stream each direction
+</Intersection>
+
+//TrafficStreams
+<TrafficStreams>
+N->S|E|W	North: Through, left, right
+S->N|E|W	South: Through, left, right
+W->E|N|S	West: Through, left, right
+E->W|N|S	East: Through, left, right
+</TrafficStreams>
+
+<PhasePlan>
+<Phases>
+phase plan = pretimed phase plan
+EW	all EW streams	RRGG	5
+EW-Y	EW ending	RRYY	2
+Stop	all red	RRRR	1
+NS	all NS streams	GGRR	2
+NS-Y	NS ending	YYRR	2
+Stop	all red	RRRR	1
+</Phases>
+
+<Phases>
+phase plan = pretimed phase plan
+SN	all EW streams	RRGG	5
+SN-Y	EW ending	RRYY	2
+Stop	all red	RRRR	1
+NS	all NS streams	GGRR	2
+EW-Y	NS ending	YYRR	2
+Stop	all red	RRRR	1
+</Phases>
+
+</PhasePlan>
+
+<SignalFaces>
+SW	N	STANDARD	N->S|E|W
+NE	N	STANDARD	N->S|E|W
+SE	N	STANDARD	N->S|E|W
+
+NE	S	STANDARD	S->N|E|W
+SW	S	STANDARD	S->N|E|W
+NW	S	STANDARD	S->N|E|W
+
+SW	W	STANDARD	W->E|N|S
+NE	W	STANDARD	W->E|N|S
+SE	W	STANDARD	W->E|N|S
+
+SE	E	STANDARD	E->W|N|S
+SW	E	STANDARD	E->W|N|S
+NW	E	STANDARD	E->W|N|S
+</SignalFaces>
